@@ -1,42 +1,66 @@
-//query selector and query selector all
+var itemList= document.querySelector('#items');
+//parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor='blue'
+// console.log(itemList.parentNode.parentNode.parentNode);
+//parent element
+// itemList.parentElement.style.backgroundColor="yellow"
 
-// var header = document.querySelector('#main-header');
-// header.style.borderBottom='2px solid black'
+//childNodes
+// console.log(itemList.childNodes);
 
-// var input= document.querySelector('input');
-// input.value='hello world';
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
 
-// var submit =document.querySelector('input[type="submit"]');
-// submit.value='SEND'
+// //firstchild ->uselsess
+// console.log(itemList.firstChild);
 
-// var item= document.querySelector(".list-group-item")
-// item.style.color='red';
+// //first element child
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent="hello 1"
 
-// var lastItem = document.querySelector('.list-group-item:last-child');
-// lastItem.style.color='green';
+// //lastchild ->uselsess
+// console.log(itemList.lastChild);
 
-//second child bg color green
-// var lastItem = document.querySelector('.list-group-item:nth-child(2)');
-// lastItem.style.backgroundColor='green' ;
-// //third item display none
-// var lastItem = document.querySelector('.list-group-item:nth-child(3)');
-// lastItem.style.display='none' ;
+// //last element child
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent="hello last"
 
+// //next Sibling
+// console.log(itemList.nextSibling);
+// //nextElementSibling
+// console.log(itemList.nextElementSibling);
 
-//queryselector all
-var titles = document.querySelectorAll('.title');
-console.log(titles);
-titles[0].textContent='hello'
- 
+//previous sibling
+// console.log(itemList.previousSibling);
+// //previous elememt sibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color='yellow'
 
-var items= document.querySelectorAll('li');
-console.log(items);
-items[1].style.color= 'green'
+//create element
+//create div
+var newdiv= document.createElement('div');
+newdiv.className="hello";
 
-var odd= document.querySelectorAll('li:nth-child(odd)');
+//add id
+newdiv.id="hello1"
+// add attribute
+newdiv.setAttribute('title','hello div');
+//create text node
+var newdivtext = document.createTextNode('hello world')
+newdiv.appendChild(newdivtext);
 
+// var container= document.querySelector('header .container')
+// var h1 = document.querySelector('header h1');
 
-for (let i = 0; i < odd.length; i++) {
-   odd[i].style.backgroundColor='green';
-    
-}
+console.log(newdiv);
+// container.insertBefore(newdiv,h1)
+//append child before item lister
+document.getElementById("main").prepend(newdiv)
+
+//appemd child before item 1
+
+let prelist= document.createElement('li');
+prelist.textContent="hello world"; 
+prelist.className="list-group-item"
+document.getElementById('items').prepend(prelist)
